@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<!-- document style -->
+<style>
+    .format {
+        font-size: 1.5em;
+        font-family: arial
+    }
+</style>
+
+<!-- load library -->
+<script src="exercise.js"></script>
+<script src="data.js"></script>
+<!-- buttons used to call functions -->
+<button onclick="callFirst()" class="format">Class List for 1.00 </button>
+<div id='firstResponse'></div><br>
+
+<button onclick="callSecond()" class="format">List Hobbies</button>
+<div id='secondResponse'></div><br>
+
+<script>
+    exercise.data = data;
+
+    function callFirst() {
+        var response = exercise.getCourseList('1.00');
+        document.getElementById('firstResponse').innerHTML = JSON.stringify(response);
+    }
+
+    function callSecond() {
+        var response = exercise.getHobbies();
+        document.getElementById('secondResponse').innerHTML = JSON.stringify(response);
+    }
+</script>
+
+</html>
